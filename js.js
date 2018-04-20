@@ -14,6 +14,12 @@ function addText() {
         return "nada";
     } else {
         leftBox.innerHTML += `<li class='p'>${newTodo} <button>Done!</button></li>`;
+        const done = document.querySelectorAll(".p button");
+        done.forEach(function (change) {
+            change.addEventListener('click', function (e) {
+                moveToTheRight(e)
+            })
+        })
     }
 }
 function moveToTheRight(e) {
